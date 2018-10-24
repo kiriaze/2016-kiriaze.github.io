@@ -10,6 +10,9 @@ words_per_minute: 200
 
 search:           true
 
+plugins:
+  - jekyll-gist
+
 # Owner/author information
 owner:
   name:           Constantine Kiriaze

@@ -4,18 +4,17 @@ var config     		= require('../config'),
 	gulp       		= require('gulp'),
 	// gulp-load-plugins will only load plugins prefixed with gulp
 	plugins			= require('gulp-load-plugins')(),
-	browserSync     = require('browser-sync'),
-	mainBowerFiles  = require('main-bower-files');
+	browserSync     = require('browser-sync');
 
 // minify, concat, uglify, sourcemap, rename JS
 gulp.task('js', function(){
 
-	var files = mainBowerFiles('**/*.js');
-	console.log('js bower files: ', files);
+	// var files = mainBowerFiles('**/*.js');
+	// console.log('js bower files: ', files);
 
-    files.push(config.scripts.src);
+	// files.push(config.scripts.src);
 
-	return gulp.src(files)
+	return gulp.src(config.scripts.src)
 		.pipe(plugins.sourcemaps.init())
 			.pipe(plugins.order(config.scripts.order))
 			.pipe(plugins.uglify())

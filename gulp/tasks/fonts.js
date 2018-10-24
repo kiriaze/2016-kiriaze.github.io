@@ -9,12 +9,12 @@ var config         = require('../config'),
 
 gulp.task('fonts', function() {
 
-	var files = mainBowerFiles('**/*.{eot,svg,ttf,woff,woff2}');
-	console.log('font bower files: ', files);
+	// var files = mainBowerFiles('**/*.{eot,svg,ttf,woff,woff2}');
+	// console.log('font bower files: ', files);
 
-    files.push(config.fonts.src + '/**/*');
+ //    files.push(config.fonts.src + '/**/*');
 
-	return gulp.src(files)
+	return gulp.src(config.fonts.src + '/**/*')
 		.pipe(plugins.changed(config.fonts.dest)) // Ignore unchanged files
 		.pipe(plugins.filter('**/*.{eot,svg,ttf,woff,woff2}'))
 		.pipe(plugins.flatten())

@@ -10,13 +10,13 @@ var config         = require('../config'),
 // minify, sourcemap, autoprefix, rename CSS
 gulp.task('css', function(){
 
-	var files = mainBowerFiles('**/*.css');
-	console.log('css bower files: ', files);
+	// var files = mainBowerFiles('**/*.css');
+	// console.log('css bower files: ', files);
 
-	// targets single file instead of dir since gulp runs better
-	files.push(config.styles.src + '/main.scss');
+	// // targets single file instead of dir since gulp runs better
+	// files.push(config.styles.src + '/main.scss');
 
-	return gulp.src(files)
+	return gulp.src(config.styles.src + '/main.scss')
 		.pipe(plugins.sourcemaps.init())
 			.pipe(plugins.sass())
 			.on('error', onError)
